@@ -93,7 +93,7 @@ public class AppointmentService {
         if (appointmentOpt.isPresent()) {
             Appointment appointment = appointmentOpt.get();
             
-            if (!appointment.canBeCancelled()) {
+            if (!appointment.getCanBeCancelled()) {
                 throw new RuntimeException("Appointment cannot be cancelled. Minimum 2 hours notice required.");
             }
             
@@ -124,7 +124,7 @@ public class AppointmentService {
         if (appointmentOpt.isPresent()) {
             Appointment appointment = appointmentOpt.get();
             
-            if (!appointment.canBeCancelled()) {
+            if (!appointment.getCanBeCancelled()) {
                 throw new RuntimeException("Appointment cannot be rescheduled. Minimum 2 hours notice required.");
             }
             
